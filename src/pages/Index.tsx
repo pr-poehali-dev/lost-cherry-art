@@ -9,7 +9,7 @@ const fragrances = [
     id: 1,
     name: 'Lost Cherry',
     brand: 'Tom Ford',
-    category: 'Восточные',
+    category: 'Ароматы',
     notes: ['Вишня', 'Миндаль', 'Сандал'],
     description: 'Чувственный аромат с оттенками вишни, миндаля и ликера. Загадочный и провокационный.',
     image: 'https://cdn.poehali.dev/projects/c4f8771d-132e-455d-aedf-31930b891981/files/8833f1d6-3968-4a86-b58f-3841bd66f0f7.jpg',
@@ -19,9 +19,21 @@ const fragrances = [
   },
   {
     id: 2,
+    name: 'Aqua Veil',
+    brand: 'Luxvisage',
+    category: 'Косметика',
+    notes: ['Гиалурон', 'Витамины', 'SPF-защита'],
+    description: 'Легкий тональный крем-флюид с комплексом гиалуроновой кислоты. Естественное покрытие и увлажнение.',
+    image: 'https://cdn.poehali.dev/projects/c4f8771d-132e-455d-aedf-31930b891981/files/5ef450d1-5045-48fd-b614-b8bf81c0d8a4.jpg',
+    price: '1 200 ₽',
+    year: 2024,
+    gender: 'Женский'
+  },
+  {
+    id: 3,
     name: 'Black Orchid',
     brand: 'Tom Ford',
-    category: 'Восточные',
+    category: 'Ароматы',
     notes: ['Чёрная орхидея', 'Пачули', 'Ваниль'],
     description: 'Роскошный тёмный аромат с нотами чёрной орхидеи и пачули.',
     image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400',
@@ -30,10 +42,10 @@ const fragrances = [
     gender: 'Unisex'
   },
   {
-    id: 3,
+    id: 4,
     name: 'Tobacco Vanille',
     brand: 'Tom Ford',
-    category: 'Восточные',
+    category: 'Ароматы',
     notes: ['Табак', 'Ваниль', 'Специи'],
     description: 'Тёплый, пряный аромат с нотами табака и ванили.',
     image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=400',
@@ -42,10 +54,10 @@ const fragrances = [
     gender: 'Unisex'
   },
   {
-    id: 4,
+    id: 5,
     name: 'Oud Wood',
     brand: 'Tom Ford',
-    category: 'Древесные',
+    category: 'Ароматы',
     notes: ['Уд', 'Сандал', 'Кардамон'],
     description: 'Элегантный древесный аромат с редким удом и специями.',
     image: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400',
@@ -55,7 +67,7 @@ const fragrances = [
   }
 ];
 
-const categories = ['Все', 'Восточные', 'Древесные', 'Цветочные', 'Цитрусовые'];
+const categories = ['Все', 'Ароматы', 'Косметика'];
 
 export default function Index() {
   const [selectedCategory, setSelectedCategory] = useState('Все');
@@ -84,10 +96,10 @@ export default function Index() {
       <section className="py-20 px-4 border-b border-border">
         <div className="container mx-auto text-center animate-fade-in">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 text-foreground">
-            Мир ароматов
+            Мир красоты
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Откройте для себя коллекцию изысканных парфюмов и историй, 
+            Откройте для себя коллекцию изысканных парфюмов, косметики и историй, 
             которые они рассказывают
           </p>
           <div className="flex gap-4 justify-center">
@@ -185,7 +197,7 @@ export default function Index() {
                 <div>
                   <h4 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Icon name="Info" size={20} className="text-primary" />
-                    О аромате
+                    О продукте
                   </h4>
                   <p className="text-muted-foreground">
                     {selectedFragrance.description}
@@ -195,7 +207,7 @@ export default function Index() {
                 <div>
                   <h4 className="text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Icon name="Sparkles" size={20} className="text-primary" />
-                    Ноты аромата
+                    Ключевые компоненты
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedFragrance.notes.map((note) => (
